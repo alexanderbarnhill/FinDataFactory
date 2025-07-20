@@ -1,0 +1,23 @@
+{
+	"name": "DestinationDataset_fnl",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureMLBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "azureml-blobstore-cb00336a-9b92-46e7-896c-cc81a475e9c0"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

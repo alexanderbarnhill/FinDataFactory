@@ -1,0 +1,18 @@
+{
+	"name": "SourceDataset_6zo",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureFinwaveImageStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "f213af86-7275-4af8-bac5-b9710303611f"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

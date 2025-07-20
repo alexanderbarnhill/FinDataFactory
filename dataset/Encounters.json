@@ -1,0 +1,132 @@
+{
+	"name": "Encounters",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "finwave",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzurePostgreSqlTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Name",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Description",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DateTime",
+				"type": "timestamp with time zone",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "LocationId",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "UserId",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "InsertDateTime",
+				"type": "timestamp with time zone",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "PopulationId",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "PredationEvent",
+				"type": "boolean",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Complete",
+				"type": "boolean",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "LicenseId",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "MarkedForDeletion",
+				"type": "boolean",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Visible",
+				"type": "boolean",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "CompleteStatus",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "InternalNotes",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AnalystId",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ArchivedBy",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ArchivedOn",
+				"type": "timestamp with time zone",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "MarkedForArchival",
+				"type": "boolean",
+				"precision": 0,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "public",
+			"table": "Encounters"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,19 @@
+{
+	"name": "SouthGeorgiaKWs",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "JT SG/JT/*",
+				"fileSystem": "jt2024data"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

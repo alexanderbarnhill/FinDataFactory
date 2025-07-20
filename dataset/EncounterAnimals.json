@@ -1,0 +1,48 @@
+{
+	"name": "EncounterAnimals",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "finwave",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzurePostgreSqlTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "EncounterId",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AnimalId",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "InsertDateTime",
+				"type": "timestamp with time zone",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "CoOccurrenceSet",
+				"type": "boolean",
+				"precision": 0,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "public",
+			"table": "EncounterAnimals"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

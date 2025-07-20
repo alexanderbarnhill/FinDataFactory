@@ -1,0 +1,117 @@
+{
+	"name": "Fin_Detection_And_Extraction",
+	"properties": {
+		"activities": [
+			{
+				"name": "Azure Function1",
+				"type": "AzureFunctionActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"functionName": {
+						"value": "@concat('get_files?',\n'&con_env_in=', pipeline().parameters.con_env_in,\n'&container=', pipeline().parameters.container,\n'&folder=', pipeline().parameters.folder\n)",
+						"type": "Expression"
+					},
+					"method": "GET"
+				},
+				"linkedServiceName": {
+					"referenceName": "GetFiles",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "For Each File",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Azure Function1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Azure Function1').output.childItems",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "DoDetection",
+							"type": "AzureFunctionActivity",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 10,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"functionName": {
+									"value": "@concat('process_file?',\n'&container=', item().container,\n'&path=', item().name,\n'&id_field=', pipeline().parameters.id_field,\n'&id_idx=', pipeline().parameters.folder_id_idx,\n'&sep=', pipeline().parameters.sep,\n'&con_env_in=', pipeline().parameters.con_env_in,\n'&con_env_out=', pipeline().parameters.con_env_out,\n'&folder_out=', pipeline().parameters.folder_out,\n'&container_out=', pipeline().parameters.container_out\n)",
+									"type": "Expression"
+								},
+								"method": "GET"
+							},
+							"linkedServiceName": {
+								"referenceName": "AzureDoDetection",
+								"type": "LinkedServiceReference"
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"container": {
+				"type": "string",
+				"defaultValue": "australian-kws"
+			},
+			"folder": {
+				"type": "string",
+				"defaultValue": "WA075 to WA145/WA131"
+			},
+			"id_field": {
+				"type": "string",
+				"defaultValue": "folder"
+			},
+			"folder_id_idx": {
+				"type": "string",
+				"defaultValue": "1"
+			},
+			"con_env_in": {
+				"type": "string",
+				"defaultValue": "DATA_LAKE_AUS_CONNECTION_STRING"
+			},
+			"con_env_out": {
+				"type": "string",
+				"defaultValue": "DATA_LAKE_AUS_CONNECTION_STRING"
+			},
+			"folder_out": {
+				"type": "string",
+				"defaultValue": "$MODEL_TRAINING_DETECTIONS/WAKWs"
+			},
+			"container_out": {
+				"type": "string",
+				"defaultValue": "australian-kws"
+			},
+			"sep": {
+				"type": "string",
+				"defaultValue": "/"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-04-15T14:28:50Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

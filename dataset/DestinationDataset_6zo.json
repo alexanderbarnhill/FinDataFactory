@@ -1,0 +1,22 @@
+{
+	"name": "DestinationDataset_6zo",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureMLBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@utcNow()",
+					"type": "Expression"
+				},
+				"container": "azureml-blobstore-cb00336a-9b92-46e7-896c-cc81a475e9c0"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

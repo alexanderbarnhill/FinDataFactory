@@ -1,0 +1,9 @@
+{
+	"name": "FinwaveDataFactory",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c1c84493-004f-4e83-8562-d238e7db0157",
+		"tenantId": "d965ce97-de62-44a6-9d64-d95e9572402a"
+	}
+}

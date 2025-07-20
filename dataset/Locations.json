@@ -1,0 +1,60 @@
+{
+	"name": "Locations",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "finwave",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzurePostgreSqlTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Name",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Latitude",
+				"type": "real",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Longitude",
+				"type": "real",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "InsertDateTime",
+				"type": "timestamp with time zone",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "PopulationId",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Nominal",
+				"type": "boolean",
+				"precision": 0,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "public",
+			"table": "Locations"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

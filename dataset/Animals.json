@@ -1,0 +1,84 @@
+{
+	"name": "Animals",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "finwave",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzurePostgreSqlTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Identifier",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "InsertDateTime",
+				"type": "timestamp with time zone",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "PopulationId",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DateOfBirth",
+				"type": "timestamp with time zone",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Nickname",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Sex",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "Notes",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DateOfDeath",
+				"type": "timestamp with time zone",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "HasProfile",
+				"type": "boolean",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AlternateIds",
+				"type": "jsonb",
+				"precision": 0,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "public",
+			"table": "Animals"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
